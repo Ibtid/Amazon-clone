@@ -1,10 +1,11 @@
+import { auth } from "./firebase";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, usePassword] = useState("");
+  const [password, setPassword] = useState("");
 
   const signIn = (e) => {
     e.preventDefault();
@@ -14,6 +15,12 @@ const Login = () => {
   const register = (e) => {
     e.preventDefault();
     //fancy firebase stuff
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+      })
+      .catch((error) => alert(error.meassage));
   };
 
   return (
@@ -38,7 +45,7 @@ const Login = () => {
           <input
             type="password"
             value={password}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button
             type="submit"
