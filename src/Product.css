@@ -29,6 +29,14 @@
   color: #111;
 }
 
+.product__rating {
+  display: flex;
+}
+
+.product__rating > p {
+  color: yellowgreen;
+}
+
 .product__price {
   margin-top: 5px;
 }
