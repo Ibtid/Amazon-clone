@@ -20,7 +20,6 @@ const Checkout = () => {
       </div>
       <div className="checkout__right">
         <Subtotal />
-        <h2>the subtotal here</h2>
       </div>
     </div>
   );
