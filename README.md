@@ -5,6 +5,9 @@ npm install @stripe/stripe-js
 
 npm install @stripe/react-stripe-js
 
+Axios:
+npm install axios
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
