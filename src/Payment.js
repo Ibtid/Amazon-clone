@@ -33,6 +33,8 @@ const Payment = () => {
     getClientSecret();
   }, [state.basket]);
 
+  console.log("The secret is >>", clientSecret);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -50,7 +52,7 @@ const Payment = () => {
         setError(null);
         setProcessing(false);
 
-        history.replaceState("/orders");
+        history.replace("/orders");
       });
   };
 
@@ -102,7 +104,7 @@ const Payment = () => {
             {/*Stripe magic */}
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
-              <div className="payment__priceConntainer">
+              <div className="payment__priceContainer">
                 <CurrencyFormat
                   renderText={(value) => (
                     <>
