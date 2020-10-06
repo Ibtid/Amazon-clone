@@ -1,5 +1,8 @@
 Deployed: https://e-clone-596cb.web.app
 
+stripe dependencies:
+npm install @stripe/stripe-js
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
