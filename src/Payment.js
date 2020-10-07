@@ -19,7 +19,7 @@ const Payment = () => {
   const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState(true);
+  const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
     //generate the special stripe secret to charge client
@@ -33,7 +33,7 @@ const Payment = () => {
     getClientSecret();
   }, [state.basket]);
 
-  //console.log("The secret is >>", clientSecret);
+  console.log("The secret is >>", clientSecret);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -84,9 +84,10 @@ const Payment = () => {
             <h3>Review items and delivery</h3>
           </div>
           <div className="payment__items">
-            {state.basket.map((item) => (
+            {state.basket.map((item, index) => (
               <CheckoutProduct
                 id={item.id}
+                key={index}
                 title={item.title}
                 image={item.image}
                 price={item.price}
