@@ -29,7 +29,7 @@ const Header = () => {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <Link to="/login">
+        <Link to={!state.user && "/login"}>
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
               Hello {state.user ? `${state.user.email}` : "Guest"}
@@ -39,10 +39,13 @@ const Header = () => {
             </span>
           </div>
         </Link>
-        <div className="header__option">
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Order</span>
-        </div>
+
+        <Link to="/orders">
+          <div className="header__option">
+            <span className="header__optionLineOne">Returns</span>
+            <span className="header__optionLineTwo">& Order</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
