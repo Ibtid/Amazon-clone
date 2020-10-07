@@ -1,5 +1,7 @@
 Deployed: https://e-clone-596cb.web.app
 
+https://Ibtid.github.io/Amazon-clone
+
 stripe dependencies:
 npm install @stripe/stripe-js
 
